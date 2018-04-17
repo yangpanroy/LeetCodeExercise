@@ -52,10 +52,10 @@ public class q7 {
 
     public static void main(String[] args) {
         int x1 = 0;
-        int x2 = 1534236469;
+        int x2 = -123;
         int x3 = 120;
         System.out.println(reverse2(x1));
-        System.out.println(reverse2(x2));
+        System.out.println(reverse(x2));
         System.out.println(reverse2(x3));
     }
 
