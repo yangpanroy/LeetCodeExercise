@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class q20180102 {
@@ -22,18 +23,12 @@ public class q20180102 {
     private static String shuffle(int[] nums, int times, int[] m) {
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < times; i++) {
-            int[] l_nums = new int[m[i]];
-            int[] r_nums = new int[13 - m[i]];
-            for (int j = 0; j < m[i]; j++) {
-                l_nums[j] = nums[j];
-            }
-            for (int j = 0; j < 13 - m[i]; j++) {
-                r_nums[j] = nums[j + m[i]];
-            }
+            int[] l_nums = Arrays.copyOfRange(nums, 0, m[i]);
+            int[] r_nums = Arrays.copyOfRange(nums, m[i], 13);
             nums = shuffleStep(l_nums, r_nums);
         }
-        for (int i = 0; i < nums.length; i++) {
-            result.append(nums[i]);
+        for (int num : nums) {
+            result.append(num);
             result.append(' ');
         }
         return result.deleteCharAt(result.length()-1).toString();
