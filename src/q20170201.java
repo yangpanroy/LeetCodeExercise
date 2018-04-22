@@ -2,7 +2,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * Created by Roy on 2018/4/18.
+ * 如果一个整数只能被1和自己整除,就称这个数是素数。
+ * 如果一个数正着反着都是一样,就称为这个数是回文数。例如:6, 66, 606, 6666
+ * 如果一个数字既是素数也是回文数,就称这个数是回文素数
+ * 牛牛现在给定一个区间[L, R],希望你能求出在这个区间内有多少个回文素数。
  */
 public class q20170201 {
     public static void main(String[] args) {
