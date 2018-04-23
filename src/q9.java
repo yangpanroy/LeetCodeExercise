@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * 判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。
 
@@ -27,10 +29,29 @@ public class q9 {
         return str.equals(sb.toString());
     }
 
+    public static boolean isPalindrome2(int x) {
+        //不使用字符串的方法
+        if (x < 0) return false;
+        else if (x < 10) return true;
+        ArrayList<Integer> xarray = new ArrayList<>();
+        int i = 0;
+        while (x != 0){
+            xarray.add(x % 10);
+            x /= 10;
+        }
+        int len = xarray.size();
+        i = 0;
+        while (i <= len/2){
+            if (xarray.get(i) != xarray.get(len - 1 - i)) return false;
+            else i++;
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
         int x1 = 121, x2 = -121, x3 = 10;
-        System.out.println(isPalindrome(x1) ? "True" : "False");
-        System.out.println(isPalindrome(x2) ? "True" : "False");
-        System.out.println(isPalindrome(x3) ? "True" : "False");
+        System.out.println(isPalindrome2(x1) ? "True" : "False");
+        System.out.println(isPalindrome2(x2) ? "True" : "False");
+        System.out.println(isPalindrome2(x3) ? "True" : "False");
     }
 }
